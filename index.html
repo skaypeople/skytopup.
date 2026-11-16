@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211638">
+  <title>SkyTopUp — Top Up Game & Layanan Digital</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="SkyTopUp beranda"><span class="brand-mark">S</span> SKYTOPUP</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+    <nav id="nav">
+      <button class="nav-link active" data-page="home">Beranda</button>
+      <button class="nav-link" data-page="history">Riwayat</button>
+      <button class="nav-link" data-page="account">Akun</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">TOP UP • DIGITAL • GAME</span>
+          <h1>Top up jadi lebih <em>mudah</em>.</h1>
+          <p>Semua kebutuhan game dan digital dalam satu tempat. Pilih layanan, isi detail, lalu lanjutkan pemesanan.</p>
+          <a class="primary-btn" href="#services">Lihat layanan</a>
+        </div>
+        <div class="hero-art" aria-label="Ilustrasi anime bergaya ungu">
+          <div class="orb orb-one"></div><div class="orb orb-two"></div>
+          <div class="anime-card"><div class="anime-hair"></div><div class="anime-face"><span class="eye"></span><span class="eye"></span><span class="blush"></span></div><div class="anime-body"></div></div>
+          <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span>
+        </div>
+      </div>
+
+      <div class="section-head" id="services">
+        <div><span class="eyebrow">PILIH KEBUTUHANMU</span><h2>Layanan SkyTopUp</h2></div>
+        <span class="small-note">Pemesanan melalui WhatsApp</span>
+      </div>
+      <div class="service-grid">
+        <button class="service-card" data-service="Top Up Game"><span class="service-icon">🎮</span><b>Top Up Game</b><small>Free Fire, Mobile Legends, Roblox, PUBG</small></button>
+        <button class="service-card" data-service="Pulsa"><span class="service-icon">📱</span><b>Pulsa</b><small>Telkomsel, AXIS, XL, IM3, Smartfren</small></button>
+        <button class="service-card" data-service="Token Listrik"><span class="service-icon">⚡</span><b>Token Listrik</b><small>Token PLN prabayar</small></button>
+        <button class="service-card" data-service="Pembayaran Pajak"><span class="service-icon">🧾</span><b>Pembayaran Pajak</b><small>Tanyakan prosedur melalui admin</small></button>
+        <button class="service-card" data-service="Akun Game"><span class="service-icon">🛡️</span><b>Akun Game</b><small>Lihat stok dan spesifikasi akun</small></button>
+      </div>
+
+      <section class="panel order-panel" id="orderPanel">
+        <div class="section-head compact"><div><span class="eyebrow">FORM PEMESANAN</span><h2 id="orderTitle">Pesan layanan</h2></div><button class="text-btn" id="closeOrder">Tutup ✕</button></div>
+        <form id="orderForm">
+          <div class="form-grid">
+            <label>Jenis layanan<select id="serviceType" required><option>Top Up Game</option><option>Pulsa</option><option>Token Listrik</option><option>Pembayaran Pajak</option></select></label>
+            <label>Game / Operator / Produk<input id="productName" placeholder="Contoh: Free Fire / Telkomsel" required></label>
+            <label>ID game / Nomor tujuan<input id="customerTarget" placeholder="Masukkan ID atau nomor tujuan" required></label>
+            <label>Nominal / Paket<input id="amount" placeholder="Contoh: 100 diamond / Rp50.000" required></label>
+          </div>
+          <label>Catatan (opsional)<textarea id="notes" rows="2" placeholder="Server, nickname, atau informasi tambahan"></textarea></label>
+          <button class="primary-btn" type="submit">Lanjutkan ke WhatsApp</button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="section-head compact"><div><span class="eyebrow">MARKETPLACE</span><h2>Stok akun game</h2></div><span class="small-note">Tanyakan ketersediaan</span></div>
+        <div id="stockList" class="stock-list"><p class="muted">Stok akun akan ditampilkan setelah admin menambahkannya.</p></div>
+      </section>
+    </section>
+
+    <section id="history" class="page">
+      <div class="page-title"><span class="eyebrow">AKTIVITAS</span><h1>Riwayat transaksi</h1><p>Daftar pesanan yang dibuat dari perangkat ini.</p></div>
+      <div id="historyList" class="panel"><p class="muted">Belum ada transaksi.</p></div>
+    </section>
+
+    <section id="account" class="page">
+      <div class="page-title"><span class="eyebrow">PENGGUNA</span><h1>Akun SkyTopUp</h1><p>Masuk untuk melihat akun dan mengelola pesanan.</p></div>
+      <div class="panel auth-panel">
+        <div class="tabs"><button class="tab active" data-auth="login">Masuk</button><button class="tab" data-auth="register">Daftar</button></div>
+        <form id="authForm">
+          <label>Email<input id="authEmail" type="email" placeholder="nama@email.com" required></label>
+          <label>Password<input id="authPassword" type="password" minlength="8" placeholder="Minimal 8 karakter" required></label>
+          <label id="usernameWrap" class="hidden">Username<input id="authUsername" placeholder="Buat username"></label>
+          <button class="primary-btn full" id="authSubmit" type="submit">Masuk</button>
+          <p class="muted tiny" id="authMessage">Demo lokal: formulir ini belum terhubung ke layanan akun online.</p>
+        </form>
+      </div>
+      <div class="panel">
+        <span class="eyebrow">ADMIN</span><h2>Panel pengelola stok</h2>
+        <p class="muted">Panel admin online akan aktif setelah autentikasi dan database dikonfigurasi. Jangan memakai password admin di dalam file website.</p>
+        <div class="admin-form">
+          <label>Nama akun game<input id="stockTitle" placeholder="Contoh: Akun Mobile Legends"></label>
+          <label>Spesifikasi<input id="stockDesc" placeholder="Rank, skin, level, server"></label>
+          <label>Harga<input id="stockPrice" placeholder="Contoh: Rp250.000"></label>
+          <button class="secondary-btn" id="addStock" type="button">Tambah stok demo</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><b>SKYTOPUP</b><span>Belanja digital dengan lebih praktis.</span><small>Website tahap awal • Transaksi diproses melalui admin.</small></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
